@@ -1,10 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import Home from './Components/Home/home';
+import Header from './Components/Header/header';
+import { Route, Routes } from 'react-router-dom';
+import Products from './Components/Products/products';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <Header/>
+      
+      <main>
+        <Routes>
+          <Route path="/" element={ <p>Welcome to Ecom portal</p>} />
+          <Route path="/home" element={ <Home />} />
+          <Route path="/products" element={<Products />} />
+        </Routes>
+      </main>
+      
+
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,7 +32,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   );
 }
