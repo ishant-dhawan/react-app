@@ -1,0 +1,22 @@
+.ml-10 {
+    margin-left: 10px;
+}
+
+.form {
+    padding: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-control {
+    margin: 10px;
+}
+
+.invalid .form-control{
+    border-color: red;
+}
+
+.error-text {
+    color: red;
+}

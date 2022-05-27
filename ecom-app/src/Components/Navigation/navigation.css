@@ -1,0 +1,12 @@
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a.active {
+    border-bottom: 5px solid red;
+}
+
+nav a, nav button {
+    margin: 0 15px;
+}

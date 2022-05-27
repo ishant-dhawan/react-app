@@ -1,12 +1,22 @@
-import { Link, NavLink } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
+import AuthContext from '../../context/authContext';
+import Navigation from '../Navigation/navigation';
 import './header.css';
 
 const Header = () => {
-    return ( <nav>
-        <NavLink className={ (navLink) => navLink.isActive ? 'active' : ''} to="/home">Home</NavLink>
-        <a href="/login">Login</a>
-        <NavLink className={ (navLink) => navLink.isActive ? 'active' : ''} to="/products">Products</NavLink>
-    </nav>);
+    let isLoggedIn = false;
+    const ctx = useContext(AuthContext);
+
+    useEffect( ()=> {
+        isLoggedIn = localStorage.getItem('isLoggedIn') ? true : false;
+    }, []);
+
+    return ( 
+    <div className='header-container'>
+        <h2>ClipKart</h2>
+        {ctx.isLoggedIn && <Navigation />}
+    </div>
+    );
 }
 
 export default Header;
